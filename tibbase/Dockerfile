@@ -1,7 +1,8 @@
 FROM centos:latest
 
 MAINTAINER Adam E. Taylor <Adam.Taylor@Logimehods.com>
-COPY files/jdk-7u80-linux-x64.rpm /tmp/
+RUN curl https://raw.githubusercontent.com/Logimethods-adam/TIBCO-AMX-DOCKER-CI/master/tibbase/files/jdk-7u80-linux-x64.rpm
+COPY jdk-7u80-linux-x64.rpm /tmp/
 RUN rpm -Uvh /tmp/jdk-7u80-linux-x64.rpm
 RUN alternatives --install /usr/bin/java java /opt/jdk1.7.0_80/bin/java 2
 RUN mkdir /opt/java
