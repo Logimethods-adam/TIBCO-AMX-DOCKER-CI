@@ -1,7 +1,7 @@
 FROM centos:latest
 
 MAINTAINER Adam E. Taylor <Adam.Taylor@Logimehods.com>
-ADD https://drive.google.com/open?id=0B1GIvbsyw5YUSmJkeU1DdEhBMFU /tmp/
+ADD https://mirror.its.sfu.ca/mirror/CentOS-Third-Party/NSG/common/x86_64/jre-7u80-linux-x64.rpm /tmp/
 RUN rpm -Uvh /tmp/jdk-7u80-linux-x64.rpm
 RUN alternatives --install /usr/bin/java java /opt/jdk1.7.0_80/bin/java 2
 RUN mkdir /opt/java
